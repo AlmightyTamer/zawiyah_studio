@@ -1,88 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery | Zawiyah</title>
-  <meta name="description" content="Browse handmade coasters, signs and journals from Zawiyah.">
+  <title>Gallery | Zawiyah Studio</title>
+  <meta name="description" content="Browse handmade wood slice coasters, tile coasters, custom name signs and painted leather journals from Zawiyah Studio.">
+  <meta name="theme-color" content="#6B3FA0">
+  <script>(function(d){d.classList.add("js");if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("motion");setTimeout(function(){if(!window.zwReveal)d.classList.remove("motion")},2500)}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- ===== Shared header (keep identical on every page; only aria-current changes) ===== -->
   <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">Zawiyah</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="gallery.html" aria-current="page">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Zawiyah<span class="visually-hidden"> Studio, home</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section">
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
       <div class="container">
-        <h2>Gallery</h2>
-        <p class="lead">A look at what is on the table right now. Swap the placeholder boxes for her original product photos.</p>
+        <p class="eyebrow">The gallery</p>
+        <h1 id="page-title">Made by hand</h1>
+        <p class="tagline">A look at the pieces made in the Zawiyah studio.</p>
+        <p class="notice">More pieces coming soon. Follow <a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">@zawiyah_studio</a> for the latest.</p>
+      </div>
+    </section>
 
-        <div class="grid">
-          <article class="card">
-            <div class="placeholder">PHOTO: autumn rainbow coaster</div>
-            <div class="card-body">
-              <h3>Autumn rainbow coaster</h3>
-              <p>Wood slice, sealed finish.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: "Be Thankful" coaster</div>
-            <div class="card-body">
-              <h3>"Be Thankful" coaster</h3>
-              <p>Wood slice, sealed finish.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: pumpkin spice coaster</div>
-            <div class="card-body">
-              <h3>Pumpkin spice coaster</h3>
-              <p>Wood slice, sealed finish.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: tile coaster set</div>
-            <div class="card-body">
-              <h3>Tile coaster set</h3>
-              <p>Patterned tiles with gold edges.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: custom name sign</div>
-            <div class="card-body">
-              <h3>Custom name sign</h3>
-              <p>Wood frame with handmade details.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: leather journal</div>
-            <div class="card-body">
-              <h3>Painted leather journal</h3>
-              <p>Hand-stitched cover with an original painting.</p>
-            </div>
-          </article>
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title" class="visually-hidden">All pieces</h2>
+
+        <!-- Filters are revealed by JavaScript. Without it, every piece simply shows. -->
+        <div data-reveal class="filter-bar" hidden>
+          <p id="filter-label"><strong>Show:</strong></p>
+          <ul class="filters" aria-labelledby="filter-label">
+          <li><button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All pieces</button></li>
+          <li><button class="filter-btn" type="button" data-filter="wood" aria-pressed="false">Wood slice coasters</button></li>
+          <li><button class="filter-btn" type="button" data-filter="tile" aria-pressed="false">Tile coasters</button></li>
+          <li><button class="filter-btn" type="button" data-filter="signs" aria-pressed="false">Custom name signs</button></li>
+          <li><button class="filter-btn" type="button" data-filter="journals" aria-pressed="false">Painted leather journals</button></li>
+          </ul>
+          <p class="gallery-status visually-hidden" role="status" aria-live="polite"></p>
         </div>
+
+        <ul class="card-grid card-grid--3 gallery-grid">
+          <li data-reveal class="card gallery-item" data-category="wood">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/wood-coasters-960.webp" srcset="images/wood-coasters-480.webp 480w, images/wood-coasters-960.webp 960w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="960" height="1326" alt="Three round wood slice coasters with glossy autumn designs: a rainbow with a pumpkin, Be Thankful with leaves, and Pumpkin Spice and Everything Nice" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Wood slice coasters</h3>
+                <p>A set of three autumn designs.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="wood">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/wood-coaster-rainbow-960.webp" srcset="images/wood-coaster-rainbow-480.webp 480w, images/wood-coaster-rainbow-960.webp 625w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="625" height="735" alt="Wood slice coaster with an orange and green rainbow arching over a small pumpkin" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Rainbow coaster</h3>
+                <p>An orange and green rainbow over a small pumpkin.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="wood">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/wood-coaster-pumpkin-spice-960.webp" srcset="images/wood-coaster-pumpkin-spice-480.webp 480w, images/wood-coaster-pumpkin-spice-960.webp 875w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="875" height="885" alt="Round wood slice coaster with a glossy finish, reading Pumpkin Spice and Everything Nice in orange and brown lettering" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Pumpkin spice coaster</h3>
+                <p>Pumpkin Spice and Everything Nice.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="tile">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/tile-coasters-960.webp" srcset="images/tile-coasters-480.webp 480w, images/tile-coasters-960.webp 960w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="960" height="1428" alt="Square tile coasters printed with blue, green and orange landscape scenes of trees, bridges and boats, with gold edges" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Tile coasters</h3>
+                <p>Landscape scenes with gold edges.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="tile">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/tile-coaster-bridge-960.webp" srcset="images/tile-coaster-bridge-480.webp 480w, images/tile-coaster-bridge-960.webp 640w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="640" height="955" alt="Close-up of a tile coaster showing an arched bridge, blue trees and people in a small boat" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Tile coaster close-up</h3>
+                <p>A bridge, trees and a small boat.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="signs">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/name-sign-960.webp" srcset="images/name-sign-480.webp 480w, images/name-sign-960.webp 960w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="960" height="1281" alt="Dark wooden sign reading Zawiyah in yellow script, with paint splashes, a tiny easel, paint tubes, markers and a mini cutting machine, hung from a strand of wooden beads" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Custom name sign</h3>
+                <p>The Zawiyah sign, with tiny craft supplies.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="journals">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/journals-960.webp" srcset="images/journals-480.webp 480w, images/journals-960.webp 960w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="960" height="1305" alt="Two brown leather journals with stitched frames around watercolor paintings of Eeyore and Totoro" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Painted leather journals</h3>
+                <p>Two journals with stitched cover art.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="journals">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/journals-eeyore-960.webp" srcset="images/journals-eeyore-480.webp 480w, images/journals-eeyore-960.webp 610w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="610" height="620" alt="Leather journal cover with a watercolor painting of Eeyore inside an orange stitched frame" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Eeyore journal</h3>
+                <p>A close-up of the painted cover.</p>
+              </figcaption>
+            </figure>
+          </li>
+          <li data-reveal class="card gallery-item" data-category="journals">
+            <figure>
+              <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/journals-totoro-960.webp" srcset="images/journals-totoro-480.webp 480w, images/journals-totoro-960.webp 570w" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="570" height="630" alt="Leather journal cover with a watercolor painting of Totoro inside a cream stitched frame" loading="lazy" decoding="async"></div>
+              <figcaption class="card-body">
+                <h3>Totoro journal</h3>
+                <p>A close-up of the painted cover.</p>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--lavender" aria-labelledby="cta-title">
+      <div class="container center">
+        <h2 data-reveal id="cta-title">See something you like?</h2>
+        <p data-reveal class="lead">Send a note about a piece you saw in the gallery.</p>
+        <a data-reveal class="btn btn--primary" href="contact.html">Contact Zawiyah</a>
       </div>
     </section>
   </main>
 
+  <!-- ===== Shared footer (keep identical on every page) ===== -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Zawiyah &middot; <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a></p>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-logo">Zawiyah</p>
+          <p>Your place to slow down, create &amp; come back to yourself.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Follow along</h2>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">Instagram: @zawiyah_studio</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-small">&copy; <span id="year">2026</span> Zawiyah Studio. Demo website: more photos and details coming soon.</p>
     </div>
   </footer>
-
 </body>
 </html>

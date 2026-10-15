@@ -1,84 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zawiyah | Handmade Art and Gifts</title>
-  <meta name="description" content="Zawiyah is a place to slow down, create and come back to yourself. Handmade art and gifts.">
+  <title>Zawiyah Studio | Handmade art and gifts</title>
+  <meta name="description" content="Zawiyah is a handmade art and gifts studio. Your place to slow down, create &amp; come back to yourself.">
+  <meta name="theme-color" content="#6B3FA0">
+  <script>(function(d){d.classList.add("js");if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("motion");setTimeout(function(){if(!window.zwReveal)d.classList.remove("motion")},2500)}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- ===== Shared header (keep identical on every page; only aria-current changes) ===== -->
   <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">Zawiyah</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Zawiyah<span class="visually-hidden"> Studio, home</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Zawiyah</h1>
-        <p>Your place to slow down, create &amp; come back to yourself.</p>
-        <a class="btn" href="gallery.html">See the collection</a>
-        <a class="btn btn-outline" href="contact.html">Request a custom piece</a>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Handmade art &amp; gifts</p>
+          <h1 id="hero-title">Welcome to Zawiyah</h1>
+          <p class="tagline">Your place to slow down, create &amp; come back to yourself.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="gallery.html">See the gallery</a>
+            <a class="btn btn--ghost" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+        <div class="photo-frame photo-frame--square"><img class="photo" src="images/name-sign-960.webp" srcset="images/name-sign-480.webp 480w, images/name-sign-960.webp 960w" sizes="(min-width: 56em) 45vw, 100vw" width="960" height="1281" alt="Dark wooden sign reading Zawiyah in yellow script, with paint splashes, a tiny easel, paint tubes, markers and a mini cutting machine, hung from a strand of wooden beads" fetchpriority="high" decoding="async"></div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- What we make -->
+    <section class="section" aria-labelledby="make-title">
       <div class="container">
-        <h2>Handmade with care</h2>
-        <p class="lead">Every piece is made by hand, from wood slice coasters to painted tiles to custom name signs. Pick something ready to go, or ask for something made just for you.</p>
-
-        <div class="grid">
-          <article class="card">
-            <div class="placeholder">PHOTO: wood slice coasters</div>
+        <h2 data-reveal id="make-title" class="center">What we make</h2>
+        <p data-reveal class="lead center">Four kinds of handmade pieces, each one made by hand in the studio.</p>
+        <ul class="card-grid card-grid--4">
+          <li data-reveal class="card">
+            <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/wood-coaster-pumpkin-spice-960.webp" srcset="images/wood-coaster-pumpkin-spice-480.webp 480w, images/wood-coaster-pumpkin-spice-960.webp 875w" sizes="(min-width: 64em) 25vw, (min-width: 40em) 50vw, 100vw" width="875" height="885" alt="Round wood slice coaster with a glossy finish, reading Pumpkin Spice and Everything Nice in orange and brown lettering" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <h3>Wood slice coasters</h3>
-              <p>Seasonal designs sealed in a glossy finish.</p>
+              <p>Coasters made on natural wood slices.</p>
             </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: tile coasters</div>
+          </li>
+          <li data-reveal class="card">
+            <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/tile-coasters-960.webp" srcset="images/tile-coasters-480.webp 480w, images/tile-coasters-960.webp 960w" sizes="(min-width: 64em) 25vw, (min-width: 40em) 50vw, 100vw" width="960" height="1428" alt="Square tile coasters printed with blue, green and orange landscape scenes of trees, bridges and boats, with gold edges" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <h3>Tile coasters</h3>
-              <p>Patterned tiles with gold edges.</p>
+              <p>Coasters made on decorated tiles.</p>
             </div>
-          </article>
-          <article class="card">
-            <div class="placeholder">PHOTO: custom name sign</div>
+          </li>
+          <li data-reveal class="card">
+            <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/name-sign-960.webp" srcset="images/name-sign-480.webp 480w, images/name-sign-960.webp 960w" sizes="(min-width: 64em) 25vw, (min-width: 40em) 50vw, 100vw" width="960" height="1281" alt="Dark wooden sign reading Zawiyah in yellow script, with paint splashes, a tiny easel, paint tubes, markers and a mini cutting machine, hung from a strand of wooden beads" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <h3>Custom name signs</h3>
-              <p>Personalized with tiny handmade details.</p>
+              <p>Signs made with the name of your choice.</p>
             </div>
-          </article>
+          </li>
+          <li data-reveal class="card">
+            <div data-reveal="zoom" class="photo-frame photo-frame--square"><img class="photo" src="images/journals-960.webp" srcset="images/journals-480.webp 480w, images/journals-960.webp 960w" sizes="(min-width: 64em) 25vw, (min-width: 40em) 50vw, 100vw" width="960" height="1305" alt="Two brown leather journals with stitched frames around watercolor paintings of Eeyore and Totoro" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <h3>Painted leather journals</h3>
+              <p>Leather journals with painted covers.</p>
+            </div>
+          </li>
+        </ul>
+        <p data-reveal class="center more-link"><a class="btn btn--primary" href="gallery.html">Browse the gallery</a></p>
+      </div>
+    </section>
+
+    <!-- Slow down strip -->
+    <section class="section section--lavender" aria-labelledby="slow-title">
+      <div class="container split">
+        <div data-reveal="zoom" class="photo-frame photo-frame--portrait"><img class="photo photo--booth" src="images/market-booth-960.webp" srcset="images/market-booth-480.webp 480w, images/market-booth-960.webp 960w" sizes="(min-width: 56em) 45vw, 100vw" width="960" height="1780" alt="Five people, including a child, smiling beside a purple Welcome to Zawiyah sign under blue market tents on a sunny day" loading="lazy" decoding="async"></div>
+        <div data-reveal="right">
+          <h2 data-reveal id="slow-title">Slow down. Create.</h2>
+          <p data-reveal class="lead">Zawiyah is a little corner for handmade things and the people who love them.</p>
+          <p>Our passion is making art for others and spreading love, one handmade piece at a time.</p>
+          <a class="btn btn--ghost" href="about.html">About the studio</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container" style="text-align:center">
-        <h2>Something in mind?</h2>
-        <p class="lead" style="margin-inline:auto">Custom orders are welcome. Tell us what you are dreaming up and we will take it from there.</p>
-        <a class="btn" href="contact.html">Get in touch</a>
+    <!-- Call to action -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container center">
+        <h2 data-reveal id="cta-title">Have a question?</h2>
+        <p data-reveal class="lead">Send a note about a piece you saw or an idea for a custom name sign.</p>
+        <a data-reveal class="btn btn--primary" href="contact.html">Contact Zawiyah</a>
       </div>
     </section>
   </main>
 
+  <!-- ===== Shared footer (keep identical on every page) ===== -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Zawiyah &middot; <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a></p>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-logo">Zawiyah</p>
+          <p>Your place to slow down, create &amp; come back to yourself.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Follow along</h2>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">Instagram: @zawiyah_studio</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-small">&copy; <span id="year">2026</span> Zawiyah Studio. Demo website: more photos and details coming soon.</p>
     </div>
   </footer>
-
 </body>
 </html>

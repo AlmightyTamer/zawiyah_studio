@@ -1,74 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Zawiyah</title>
-  <meta name="description" content="Ask about a custom order or say hello to Zawiyah.">
+  <title>Contact | Zawiyah Studio</title>
+  <meta name="description" content="Get in touch with Zawiyah Studio about handmade coasters, name signs and painted leather journals.">
+  <meta name="theme-color" content="#6B3FA0">
+  <script>(function(d){d.classList.add("js");if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("motion");setTimeout(function(){if(!window.zwReveal)d.classList.remove("motion")},2500)}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- ===== Shared header (keep identical on every page; only aria-current changes) ===== -->
   <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">Zawiyah</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Zawiyah<span class="visually-hidden"> Studio, home</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section">
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="lead">Ask about a custom piece or just say hello. You can also find us on Instagram at <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a>.</p>
+        <p class="eyebrow">Contact</p>
+        <h1 id="page-title">Say hello</h1>
+        <p class="tagline">Questions about a piece or an idea for a custom name sign? Send a note.</p>
+      </div>
+    </section>
 
-        <form id="contact-form">
-          <label>Your name
-            <input type="text" name="name" required>
-          </label>
-          <label>Email
-            <input type="email" name="email" required>
-          </label>
-          <label>What are you looking for?
-            <select name="topic">
-              <option>Custom order</option>
-              <option>Question about a piece</option>
-              <option>Something else</option>
-            </select>
-          </label>
-          <label>Message
-            <textarea name="message" required></textarea>
-          </label>
-          <button class="btn" type="submit">Send message</button>
-          <p id="form-note" role="status"></p>
-        </form>
+    <section class="section" aria-labelledby="form-title">
+      <div class="container split split--top">
+        <div data-reveal="left">
+          <h2 data-reveal id="form-title">Send a message</h2>
+          <p class="notice"><strong>Demo form:</strong> this website is a demo, so messages are not sent anywhere.</p>
+
+          <form class="form" id="contact-form" action="#">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+              <p class="error" id="name-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+              <p class="error" id="email-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="topic">What is this about? <span class="hint">(optional)</span></label>
+              <select id="topic" name="topic">
+                <option value="">Choose a topic</option>
+                <option>Wood slice coasters</option>
+                <option>Tile coasters</option>
+                <option>Custom name signs</option>
+                <option>Painted leather journals</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+              <p class="error" id="message-error"></p>
+            </div>
+
+            <div>
+              <button class="btn btn--primary" type="submit">Send message</button>
+            </div>
+
+            <div class="form-result" id="form-result" role="status" tabindex="-1"></div>
+          </form>
+        </div>
+
+        <div data-reveal="right">
+          <h2 data-reveal>Other ways to reach us</h2>
+          <ul class="contact-list">
+            <li>
+              <strong>Instagram</strong><br>
+              <a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">@zawiyah_studio</a>
+            </li>
+            <li>
+              <strong>Email</strong><br>
+              <span class="todo">Owner to add an email address.</span>
+            </li>
+            <li>
+              <strong>Markets and events</strong><br>
+              <span class="todo">Owner to add upcoming dates.</span>
+            </li>
+          </ul>
+          <div data-reveal="zoom" class="photo-frame photo-frame--natural photo-frame--small"><img class="photo" src="images/welcome-sign.webp" width="325" height="470" alt="Purple sign reading Welcome to Zawiyah, your place to slow down, create and come back to yourself, @zawiyah_studio, decorated with autumn leaves and pumpkins" loading="lazy" decoding="async"></div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ===== Shared footer (keep identical on every page) ===== -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Zawiyah &middot; <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a></p>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-logo">Zawiyah</p>
+          <p>Your place to slow down, create &amp; come back to yourself.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Follow along</h2>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">Instagram: @zawiyah_studio</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-small">&copy; <span id="year">2026</span> Zawiyah Studio. Demo website: more photos and details coming soon.</p>
     </div>
   </footer>
-
-  <script>
-    // Demo only: this form does not send anything yet.
-    // Later, connect it to a service like Formspree or build a small backend.
-    document.getElementById("contact-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      document.getElementById("form-note").textContent =
-        "Demo only: the form is not connected yet, so nothing was sent.";
-    });
-  </script>
-
 </body>
 </html>

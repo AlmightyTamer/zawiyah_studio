@@ -1,48 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About | Zawiyah</title>
-  <meta name="description" content="The story behind Zawiyah, a handmade art and gift studio.">
+  <title>About | Zawiyah Studio</title>
+  <meta name="description" content="About Zawiyah Studio, a handmade art and gifts studio.">
+  <meta name="theme-color" content="#6B3FA0">
+  <script>(function(d){d.classList.add("js");if("IntersectionObserver"in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){d.classList.add("motion");setTimeout(function(){if(!window.zwReveal)d.classList.remove("motion")},2500)}})(document.documentElement);</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&amp;text=%D8%B2%D8%A7%D9%88%D9%8A%D8%A9&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- ===== Shared header (keep identical on every page; only aria-current changes) ===== -->
   <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">Zawiyah</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html" aria-current="page">About</a>
-        <a href="contact.html">Contact</a>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Zawiyah<span class="visually-hidden"> Studio, home</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container split">
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="container hero-grid">
         <div>
-          <h2>Our story</h2>
-          <p>Zawiyah is a place to slow down, create and come back to yourself.</p>
-          <p style="margin-top:1rem">[Placeholder: replace this with Nosheen's own words about why she started Zawiyah, what she loves making, and where you can find her, like Spirit of Shrewsbury and other local markets.]</p>
-          <p style="margin-top:1.5rem"><a class="btn" href="contact.html">Say hello</a></p>
+          <p class="eyebrow">About the studio</p>
+          <h1 id="page-title">Hello from Zawiyah</h1>
+          <p class="tagline">Your place to slow down, create &amp; come back to yourself.</p>
+          <p><span class="todo">Owner to add a short introduction here.</span></p>
         </div>
-        <div class="placeholder">PHOTO: Nosheen or her workspace (get permission first)</div>
+        <div class="ph ph--tall" role="img" aria-label="Photo placeholder: portrait of the maker in the studio">
+          <span class="ph-tag" aria-hidden="true">Photo placeholder</span>
+          <span class="ph-label" aria-hidden="true">Portrait of the maker</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="story-title">
+      <div class="container split">
+        <div data-reveal="left">
+          <h2 data-reveal id="story-title">Our mission</h2>
+          <p class="mission">Zawiyah began with a simple passion: making art for others. Every coaster, sign and journal is made by hand to spread a little love, whether it becomes a gift for someone special or a small treat for yourself.</p>
+          <p>Our mission is to create pieces that bring warmth into your home and give you a quiet corner to slow down, create and come back to yourself.</p>
+          <h3>Behind the name</h3>
+          <p>In Arabic, <span class="ar" lang="ar" dir="rtl">زاوية</span> (zawiyah) means a corner. To us, it is that cozy corner of the world where handmade things are made with care and shared with love.</p>
+        </div>
+        <figure data-reveal="right" class="name-panel">
+          <p class="name-panel-ar" lang="ar" dir="rtl">زاوية</p>
+          <p class="name-panel-en">Zawiyah</p>
+          <figcaption>Arabic for &ldquo;a corner&rdquo;</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--lavender" aria-labelledby="craft-title">
+      <div class="container">
+        <h2 data-reveal id="craft-title" class="center">What the studio makes</h2>
+        <ul class="card-grid card-grid--4">
+          <li data-reveal class="card"><div class="card-body"><h3>Wood slice coasters</h3><p><span class="todo">Owner to add how these are made.</span></p></div></li>
+          <li data-reveal class="card"><div class="card-body"><h3>Tile coasters</h3><p><span class="todo">Owner to add how these are made.</span></p></div></li>
+          <li data-reveal class="card"><div class="card-body"><h3>Custom name signs</h3><p><span class="todo">Owner to add how these are made.</span></p></div></li>
+          <li data-reveal class="card"><div class="card-body"><h3>Painted leather journals</h3><p><span class="todo">Owner to add how these are made.</span></p></div></li>
+        </ul>
+        <p data-reveal class="center more-link"><a class="btn btn--primary" href="gallery.html">See them in the gallery</a></p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="market-title">
+      <div class="container split">
+        <div data-reveal="zoom" class="photo-frame photo-frame--portrait"><img class="photo photo--booth" src="images/market-booth-960.webp" srcset="images/market-booth-480.webp 480w, images/market-booth-960.webp 960w" sizes="(min-width: 56em) 45vw, 100vw" width="960" height="1780" alt="Five people, including a child, smiling beside a purple Welcome to Zawiyah sign under blue market tents on a sunny day" loading="lazy" decoding="async"></div>
+        <div data-reveal="right">
+          <h2 data-reveal id="market-title">Market days</h2>
+          <p><span class="todo">Owner to list upcoming markets and events.</span></p>
+          <p>For news and new pieces, follow <a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">@zawiyah_studio on Instagram</a>.</p>
+          <a class="btn btn--ghost" href="contact.html">Get in touch</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- ===== Shared footer (keep identical on every page) ===== -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Zawiyah &middot; <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a></p>
+      <div class="footer-grid">
+        <div>
+          <p class="footer-logo">Zawiyah</p>
+          <p>Your place to slow down, create &amp; come back to yourself.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Follow along</h2>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/zawiyah_studio/" rel="noopener">Instagram: @zawiyah_studio</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-small">&copy; <span id="year">2026</span> Zawiyah Studio. Demo website: more photos and details coming soon.</p>
     </div>
   </footer>
-
 </body>
 </html>
