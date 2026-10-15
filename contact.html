@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Zawiyah</title>
+  <meta name="description" content="Ask about a custom order or say hello to Zawiyah.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Zawiyah</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">Ask about a custom piece or just say hello. You can also find us on Instagram at <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a>.</p>
+
+        <form id="contact-form">
+          <label>Your name
+            <input type="text" name="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>What are you looking for?
+            <select name="topic">
+              <option>Custom order</option>
+              <option>Question about a piece</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea name="message" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send message</button>
+          <p id="form-note" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Zawiyah &middot; <a href="https://www.instagram.com/zawiyah_studio" target="_blank" rel="noopener">@zawiyah_studio</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Demo only: this form does not send anything yet.
+    // Later, connect it to a service like Formspree or build a small backend.
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("form-note").textContent =
+        "Demo only: the form is not connected yet, so nothing was sent.";
+    });
+  </script>
+
+</body>
+</html>

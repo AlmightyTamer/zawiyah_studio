@@ -1,0 +1,212 @@
+/* Zawiyah Studio: shared styles
+   Palette estimated from her Instagram and booth sign. Fine-tune with her original photos. */
+
+:root {
+  --purple: #6B3FA0;
+  --purple-dark: #4F2D7A;
+  --lavender: #E9DDF5;
+  --cream: #FBF7F0;
+  --pumpkin: #E07B2E;
+  --brown: #5B2A1E;
+  --olive: #5F7A3D;
+  --gold: #D9A21B;
+
+  --font-script: "Dancing Script", cursive;
+  --font-body: "Nunito", system-ui, sans-serif;
+
+  --radius: 14px;
+  --max-width: 1080px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--brown);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--purple); }
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+/* Header and nav */
+.site-header {
+  background: var(--purple);
+  color: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding-block: 0.75rem;
+}
+
+.logo {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--cream);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.site-nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+
+.site-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 700;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--pumpkin);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(160deg, var(--lavender), var(--cream));
+  text-align: center;
+  padding: 5rem 0 4rem;
+}
+
+.hero h1 {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  color: var(--purple);
+  line-height: 1.1;
+}
+
+.hero p {
+  max-width: 34rem;
+  margin: 1rem auto 2rem;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--purple);
+  color: var(--cream);
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn:hover { background: var(--pumpkin); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--purple);
+  border: 2px solid var(--purple);
+}
+
+.btn-outline:hover { background: var(--purple); color: var(--cream); }
+
+/* Sections */
+.section { padding: 4rem 0; }
+.section-alt { background: var(--lavender); }
+
+.section h2 {
+  font-family: var(--font-script);
+  font-size: 2.6rem;
+  color: var(--purple);
+  margin-bottom: 0.5rem;
+}
+
+.section .lead { max-width: 40rem; margin-bottom: 2rem; }
+
+/* Card grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(91, 42, 30, 0.12);
+}
+
+.card-body { padding: 1rem 1.1rem 1.3rem; }
+.card-body h3 { color: var(--purple); margin-bottom: 0.25rem; }
+
+/* Placeholder image boxes: replace with her real photos */
+.placeholder {
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(45deg, var(--lavender), var(--lavender) 12px, var(--cream) 12px, var(--cream) 24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  color: var(--purple-dark);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Two-column layout for About */
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Contact form */
+form { display: grid; gap: 1rem; max-width: 34rem; }
+
+label { font-weight: 700; display: grid; gap: 0.3rem; }
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--lavender);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--brown);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+textarea { min-height: 8rem; resize: vertical; }
+
+/* Footer */
+.site-footer {
+  background: var(--brown);
+  color: var(--cream);
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.site-footer a { color: var(--gold); }
